@@ -1,0 +1,11 @@
+<templateSet group="My Group">
+  <template name="*" value="*&#10; * 功能:$params$ $return$        &#10; * @author zhi&#10; * @date $date$ $time$&#10; **/" description="method" toReformat="false" toShortenFQNames="true">
+    <variable name="params" expression="groovyScript(&quot;def result=''; def stop=false; def params=\&quot;${_1}\&quot;.replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); if (params.size()==1 &amp;&amp; (params[0]==null || params[0]=='null' || params[0]=='')) { stop=true; }; if(!stop) { for(i=0; i &lt; params.size(); i++) {result +=((i==0) ? '\\r\\n' : '') + ((i &lt; params.size() - 1) ? ' * @param: ' + params[i] + '\\r\\n' : ' * @param ' + params[i] + '')}; }; return result;&quot;, methodParameters()) " defaultValue="" alwaysStopAt="false" />
+    <variable name="return" expression="groovyScript(&quot;def result=''; def data=\&quot;${_1}\&quot;; def stop=false; if(data==null || data=='null' || data=='' || data=='void' ) { stop=true; }; if(!stop) { result += '\\r\\n' + ' * @return ' + data; }; return result;&quot;, methodReturnType()) " defaultValue="" alwaysStopAt="false" />
+    <variable name="date" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <variable name="time" expression="time()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

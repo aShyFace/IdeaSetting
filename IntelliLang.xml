@@ -1,0 +1,18 @@
+<application>
+  <component name="LanguageInjectionConfiguration">
+    <injection language="SQL" injector-id="xml">
+      <display-name>iBatis3: sql|select|insert|update|delete</display-name>
+      <place disabled="true"><![CDATA[xmlTag().withLocalName(string().oneOf("select", "insert", "update", "delete")).withNamespace(string().oneOf("http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd", "http://mybatis.org/dtd/mybatis-3-mapper.dtd"))]]></place>
+      <apply-to-subtags />
+    </injection>
+    <injection language="SQL" injector-id="xml">
+      <display-name>iBatis3: sql|select|insert|update|delete</display-name>
+      <place disabled="true"><![CDATA[xmlTag().withLocalName(string().oneOf("sql", "select", "insert", "update", "delete")).withNamespace(string().oneOf("http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd", "http://mybatis.org/dtd/mybatis-3-mapper.dtd"))]]></place>
+      <apply-to-subtags />
+    </injection>
+    <injection language="GenericSQL" injector-id="xml">
+      <display-name>session-factory</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("session-factory")).withNamespace(string().equalTo("http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"))]]></place>
+    </injection>
+  </component>
+</application>

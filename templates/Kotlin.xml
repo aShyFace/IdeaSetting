@@ -1,0 +1,7 @@
+<templateSet group="Kotlin">
+  <template name="sout" value="System.out.println($END$);" description="Prints a string to System.out" toReformat="true" toShortenFQNames="false">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
